@@ -1,0 +1,157 @@
+/* إعدادات عامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* الشريط العلوي */
+.navbar {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #555;
+}
+
+/* الجزء الرئيسي */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  background-color: #fcfcfc;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #111;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+  min-width: 280px;
+}
+
+.hero-image img {
+  max-width: 320px;
+  width: 100%;
+}
+
+/* قسم المنتجات */
+.products {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.products h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.product-item {
+  width: 200px;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+}
+
+.product-item p {
+   background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  font-weight: 800;
+
+}
+
+/* قسم من نحن */
+.about {
+  text-align: center;
+  padding: 60px 40px 100px;
+  background-color: #fff;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1rem;
+  color: #555;
+}
+cards { display:flex; justify-content:center; gap:40px; margin-top:40px; }
+.card { background:#fff; padding:20px; border-radius:10px; width:250px; box-shadow:0 2px 7px #ddd; }
+.checkout { position:fixed; top:0; left:0; width:100%; height:100%; background:#00000090; display:flex; justify-content:center; align-items:center; }
+.checkout-box { background:#fff; padding:30px; width:300px; border-radius:10px; display:flex; flex-direction:column; gap:10px; }
+.hidden { display:none; }
+.close { background:red; color:#fff; border:none; padding:4px 8px; float:left; cursor:pointer; }
+.success { color:green; font-weight:bold; margin-top:10px; }
