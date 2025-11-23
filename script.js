@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentloaded", () => {
+window.addEventListener("load", () => {
  
   setTimeout(() => {
 
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentloaded", () => {
 
     // 2 - استنى مدة fade قبل التحويل
     setTimeout(() => {
-      window.location.href = "index.html";
+      window.location.href = "home.html";
     }, 800); // لازم نفس مدة الـ transition اللي في الـ CSS
 
   }, 3000); // وقت الانيميشن قبل fade-out

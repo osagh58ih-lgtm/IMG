@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>أداة تصميم تيشيرت — محرر احترافي</title>
+
+  <!-- خطوط عربية جميلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ربط ملف CSS (هأرسله لك في الرسالة التالية) -->
+  <link rel="stylesheet" href="start.css">
+
+  <!-- Fabric.js (مكتبة الكانڤاس القوية) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+
+  <!-- ملاحظة: سأستخدم اسم ملف التيشيرت: `tshirt-outline.png` في مجلد المشروع. استبدله بالصورة اللي ارفعتها لو احتجت. -->
+</head>
+
+<body>
+  <aside class="sidebar">
+    <header>
+      <h1>مصمم تيشيرت احترافي</h1>
+      <p class="muted">ارفع صور، أضف نصوص، استخدم استيكرز وتأثيرات — واحفظ PNG / SVG</p>
+    </header>
+
+    <section class="controls">
+      <div class="row">
+        <button id="tool-select" class="btn">🖱️ تحديد</button>
+        <button id="tool-draw" class="btn">✏️ رسم</button>
+        <button id="tool-erase" class="btn">🧽 ممحاة</button>
+      </div>
+
+      <label>حجم الفرشاة: <span id="brush-size-label">6</span>px</label>
+      <input id="brush-size" type="range" min="1" max="120" value="6">
+
+      <label>اللون:</label>
+      <input id="color-picker" type="color" value="#000000">
+
+      <label>أضف صورة من جهازك:</label>
+      <div class="row">
+        <label class="file-btn btn">⬆️ رفع
+          <input id="img-upload" type="file" accept="image/*" hidden>
+        </label>
+        <button id="add-sticker" class="btn">➕ إضافة استيكر</button>
+      </div>
+
+      <label>أضف نص:</label>
+      <div class="row">
+        <input id="text-input" placeholder="أكتب هنا" />
+        <select id="font-select">
+          <option value="Cairo">Cairo</option>
+          <option value="Nunito">Nunito</option>
+          <option value="Tahoma">Tahoma</option>
+        </select>
+        <button id="add-text" class="btn">أدخل</button>
+      </div>
+
+      <label>الاستيكرز الشائعة:</label>
+      <div id="stickers" class="stickers">
+        <!-- ملفات استيكر جاهزة موجودة في مجلد `stickers/` وسيتم تحميلها في app.js -->
+        <img class="sticker-thumb" src="stickers/sticker1.png" data-src="stickers/sticker1.png" alt="Sticker 1">
+        <img class="sticker-thumb" src="stickers/sticker2.png" data-src="stickers/sticker2.png" alt="Sticker 2">
+        <img class="sticker-thumb" src="stickers/sticker3.png" data-src="stickers/sticker3.png" alt="Sticker 3">
+        <img class="sticker-thumb" src="stickers/sticker4.png" data-src="stickers/sticker4.png" alt="Sticker 4">
+      </div>
+
+      <label>تأثيرات سريعة:</label>
+      <div class="row">
+        <button class="btn effect" data-effect="shadow">Shadow</button>
+        <button class="btn effect" data-effect="blur">Blur</button>
+        <button class="btn effect" data-effect="brightness">Brightness</button>
+        <button id="remove-effects" class="btn">إزالة التأثيرات</button>
+      </div>
+
+      <div class="row">
+        <button id="undo" class="btn">↶ تراجع</button>
+        <button id="redo" class="btn">↷ إعادة</button>
+        <button id="delete" class="btn">حذف</button>
+      </div>
+
+      <div class="row">
+        <button id="export-png" class="btn primary">تحميل PNG</button>
+        <button id="export-svg" class="btn">تحميل SVG</button>
+        <a href="home.html">
+        <button id="done" class="btn primary">Done 
+</a>
+        </button>
+      </div>
+
+      <p class="hint">ملاحظة: استخدم زر التحديد لتحريك، تدوير، وتغيير حجم العناصر. سيتم تحميل استيكرز جاهزة تلقائيًا.</p>
+    </section>
+  </aside>
+
+  <main class="canvas-wrap">
+    <div class="stage">
+      <!-- عنصر canvas سيملأ مكان التصميم. اسمه متطابق في app.js -->
+      <canvas id="tshirt-canvas" width="700" height="800"></canvas>
+
+      <!-- صورة الخطوط للتيشيرت (ضع ملف tshirt-outline.png في نفس مجلد المشروع) -->
+<img id="tshirt-outline" src="tshirt-outline.png.png" alt="Tshirt Outline" >
+    </div>
+  </main>
+
+  <!-- ربط ملف الجافاسكربت (هأرسله بعدين) -->
+  <script src="start.js"></script>
+</body>
+</html>

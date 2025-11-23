@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>IMG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo"><img src="logo.png.jpg"width="150" alt="logo"></div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+ <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Design Your<br>Own Clothing</h1>
+      <a href="start.html">
+      <button class="btn">Start Designing</button> </a>
+    </div>
+    <div class="hero-image"><a href="start designing/start.html" target="_blank" rel="noopener noreferrer">
+      </a>
+      <img src="img.fh.jpg" alt="T-Shirt">
+  
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <a href="shirt.html">
+        <img src="img.tshert.jpg" alt="T-Shirt">
+        </a>
+        
+              <button class="order" data-product="T-Shirt" data-price="150"><p> T-Shirt</p></button>
+      </div>
+      <div class="product-item">
+        <a href="hoodie.html">
+        <img src="img.houdy.jpg" alt="Hoodie">
+        </a>
+              <button class="order" data-product="Hoodie" data-price="300"> <p>Hoodie</p> </button>
+
+    
+      </div>
+      <div class="product-item">
+        <a href="cup.html">
+        <img src="img.cup.jpg" alt="Cap">
+        </a>
+        
+              <button class="order" data-product="Cap" data-price="80">  <p>Cap</p></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </section>
+  <section id="about" class="about">
+  
+</section>
+
+<section id="contact" class="contact">
+
+</section>
+<div id="checkout" class="checkout hidden">
+  <div class="checkout-box">
+    <button id="closeCheckout" class="close">×</button>
+    <h3>استكمال الطلب</h3>
+
+    <label>المنتج</label>
+    <input id="productInput" readonly />
+
+    <label>السعر</label>
+    <input id="priceInput" readonly />
+
+    <label aria-required="false">الكمية</label>
+    <input id="qty" type="number" value="1" min="1" />
+
+    <label aria-required="false">اسمك</label>
+    <input id="customerName" />
+
+    <label aria-required="false">العنوان</label>
+    <input id="address" />
+
+    <button id="submitOrder" class="btn">تأكيد الطلب</button>
+
+    <p id="done" class="success hidden"></p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
