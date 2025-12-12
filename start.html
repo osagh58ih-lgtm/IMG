@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>Designer.IMG</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="start.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+</head>
+
+<body>
+
+<aside class="sidebar">
+  <h1>T-shirt Designer</h1>
+
+
+  <label>Tools</label>
+   <div class="row">
+        <button id="tool-select" class="btn">🖱️ Move</button>
+        <button id="tool-draw" class="btn">✏️ Drawing </button>
+        <button id="tool-erase" class="btn">🧽 eraser</button>
+      </div>
+  <label>Brush size</label>
+  <input id="brush-size" type="range" min="1" max="80" value="6">
+
+  <label>color</label>
+  <input id="color-picker" type="color" value="#000000">
+
+  <label> Add img</label>
+  <input type="file" id="img-upload" accept="image/*">
+
+  <label> Add text</label>
+  <div class="row">
+    <input id="text-input" placeholder=" text">
+    <button id="add-text" class="btn">text</button>
+  </div>
+
+  <label>Stickers</label>
+  <div class="stickers-panel">
+    <img src="img/stickers/s1.jpeg" class="sticker">
+    <img src="img/stickers/s2.jpeg" class="sticker">
+    <img src="img/stickers/s3.jpeg" class="sticker">
+    <img src="img/stickers/s4.jpeg" class="sticker">
+<img src="img/stickers/steker.9.jpeg" class="sticker">
+<img src="img/stickers/steker.8.jpeg" class="sticker">
+<img src="img/stickers/steker.7.jpeg" class="sticker">
+<img src="img/stickers/steker.5.jpeg" class="sticker">
+
+
+
+  </div>
+
+  <div class="row">
+    <button id="undo" class="btn">Undo</button>
+    <button id="redo" class="btn">Redo</button>
+    <button id="delete" class="btn">Delete</button>
+
+  </div>
+  <div>
+    <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">
+    <button id="AI" class="btn primary">AI</button>
+    </a>
+
+
+  </div>
+ <div class="row"> <button id="export-png" class="btn primary"> Download PNG</button>
+    
+        <button id="done" class="btn primary">Done 
+        </button>
+         
+  </div>
+
+</aside>
+
+<main class="canvas-wrap">
+  <canvas id="tshirt-canvas" width="700" height="800"></canvas>
+</main>
+
+<script src="start.js"></script>
+</body>
+</html>
