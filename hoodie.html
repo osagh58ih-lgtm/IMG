@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Hoodie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .image-gallery img.selected {
+      border: 3px solid #00aaff;
+      box-shadow: 0 0 10px #00aaff;
+    }
+
+    #selectedText {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .preview {
+      margin-top: 20px;
+    }
+
+    .preview img {
+      width: 150px;
+      border-radius: 10px;
+      border: 3px solid #00aaff;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #00aaff;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    button.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h2>Choose Design</h2>
+
+  <div class="image-gallery">
+    <img src="img.houdy.jpg" class="selectable-img">
+    <img src="hody.1.jpeg" class="selectable-img">
+    <img src="hody.2.jpeg" class="selectable-img">
+    <img src="hody.3.jpeg" class="selectable-img">
+    <img src="hody.4.jpeg" class="selectable-img">
+    <img src="hody.5.jpeg" class="selectable-img">
+    <img src="hody.6.jpeg" class="selectable-img">
+    <img src="hody.7.jpeg" class="selectable-img">
+    <img src="hody.8.jpeg" class="selectable-img">
+    <img src="hody.9.jpeg" class="selectable-img">
+    <img src="hody.10.jpeg" class="selectable-img">
+    <img src="h1.jpeg" class="selectable-img">
+    <img src="h2.jpeg" class="selectable-img">
+    <img src="h3.jpeg" class="selectable-img">
+    <img src="h4.jpeg" class="selectable-img">
+    <img src="h5.jpeg" class="selectable-img">
+    <img src="h6.jpeg" class="selectable-img">
+   
+  <p id="selectedText">لم يتم اختيار صورة بعد</p>
+
+  <div class="preview" id="previewBox"></div>
+
+  <button id="confirmBtn">تأكيد الاختيار</button>
+  <button id="buyBtn">انتقال / شراء</button>
+
+  <script>
+    const images = document.querySelectorAll(".selectable-img");
+    const text = document.getElementById("selectedText");
+    const previewBox = document.getElementById("previewBox");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const buyBtn = document.getElementById("buyBtn");
+
+    let selectedImage = localStorage.getItem("selectedImage");
+
+    if (selectedImage) {
+      images.forEach(img => {
+        if (img.src === selectedImage) {
+          img.classList.add("selected");
+          text.textContent = "تم اختيار الصورة مسبقًا";
+          previewBox.innerHTML = `<img src="${selectedImage}">`;
+          confirmBtn.classList.add("active");
+          buyBtn.classList.add("active");
+        }
+      });
+    }
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+
+        images.forEach(i => i.classList.remove("selected"));
+        img.classList.add("selected");
+
+        selectedImage = img.src;
+
+        text.textContent = "تم اختيار صورة";
+        previewBox.innerHTML = `<img src="${selectedImage}">`;
+
+        confirmBtn.classList.add("active");
+        buyBtn.classList.add("active");
+      });
+    });
+
+    confirmBtn.addEventListener("click", () => {
+      if (!selectedImage) return;
+      localStorage.setItem("selectedImage", selectedImage);
+      alert("✅ تم حفظ الصورة المختارة");
+    });
+
+    buyBtn.addEventListener("click", () => {
+      if (!selectedImage) return;
+
+      window.location.href = "order.html?img=" + encodeURIComponent(selectedImage);
+    });
+  </script>
+
+</body>
+</html>
